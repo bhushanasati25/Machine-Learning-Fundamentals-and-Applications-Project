@@ -1,4 +1,7 @@
-# 📉 Machine Learning Fundamentals and Applications Project - Company Bankruptcy Prediction: A Divide & Conquer Approach
+# 📉 Machine Learning Fundamentals and Applications Project
+
+
+- Company Bankruptcy Prediction: A Divide & Conquer Approach
 
 <div align="center">
 
