@@ -177,31 +177,63 @@ For each cluster, decision thresholds were **manually tuned** through:
 ## 📂 Repository Structure
 
 ```
-bankruptcy-prediction/
+Machine-Learning-Fundamentals-and-Applications-Project/
 │
-├── 📓 Notebooks
-│   ├── 1_Team_TrainingData.ipynb          # Step 1: Clustering & Feature Engineering
-│   ├── 2_Member_Cluster_0.ipynb           # Step 2: Stacking Model (Cluster 0)
-│   ├── 2_Member_Cluster_1.ipynb           # Step 2: Stacking Model (Cluster 1)
-│   ├── 2_Member_Cluster_5.ipynb           # Step 2: Stacking Model (Cluster 5)
-│   ├── 2_Member_Cluster_6.ipynb           # Step 2: Stacking Model (Cluster 6) [Edge Case]
-│   └── 3_Team_Generalization.ipynb        # Step 3: Final Test Predictions
+├── � Team Member Directories
+│   ├── Bhushan Asati/
+│   │   ├── Bhushan_Asati_Cluster0.ipynb           # Cluster 0 Implementation
+│   │   ├── cluster_0_train_data.csv               # Cluster 0 Training Data
+│   │   └── member_model_cluster_0.joblib          # Cluster 0 Trained Model
+│   │
+│   ├── Anirudh Sharma/
+│   │   ├── Anirudh_Sharma_Cluster1.ipynb          # Cluster 1 Implementation
+│   │   ├── cluster_1_train_data.csv               # Cluster 1 Training Data
+│   │   └── member_model_cluster_1.joblib          # Cluster 1 Trained Model
+│   │
+│   ├── Rujuta Dabke/                              # Cluster 5 Implementation
+│   │
+│   └── Suyash Madavi/                             # Cluster 6 Implementation
 │
-├── 📊 Data
-│   ├── train_data.csv                      # Original Training Dataset
-│   ├── test_data.csv                       # Original Test Dataset (Unlabeled)
-│   └── cluster_X_train_data.csv            # Generated Cluster Subsets
+├── 🔄 Team Work (Collaborative Notebooks)
+│   ├── 05_TrainingData.ipynb                      # Step 1: Feature Engineering & Clustering
+│   ├── 05_Generalization.ipynb                    # Step 3: Final Test Predictions
+│   ├── 05_Generalization.csv                      # Test Predictions Output
+│   ├── team_preprocessing.joblib                  # Shared Preprocessing Pipeline
+│   ├── team_cluster_model.joblib                  # K-Means Clustering Model
+│   ├── team_cluster_predictor.joblib              # Cluster Prediction Model
+│   ├── train_data.csv                             # Training Dataset (Copy)
+│   └── test_data.csv                              # Test Dataset (Copy)
 │
-├── 🤖 Models (Saved Artifacts)
-│   ├── team_preprocessing.joblib           # StandardScaler + Feature Selector
-│   ├── team_cluster_model.joblib           # K-Means Model (K=7)
-│   └── member_model_cluster_X.joblib       # Stacking Classifiers (X = 0,1,5,6)
+├── 📊 Data (Original Datasets)
+│   ├── train_data.csv                             # Original Training Dataset (6,819 companies)
+│   └── test_data.csv                              # Original Test Dataset (Unlabeled)
+│
+├── 🎯 Clusters (Generated Subgroup Data)
+│   ├── cluster_0_train_data.csv                   # Cluster 0 Subset (Active)
+│   ├── cluster_1_train_data.csv                   # Cluster 1 Subset (Active)
+│   ├── cluster_2_train_data.csv                   # Cluster 2 Subset (Constant)
+│   ├── cluster_3_train_data.csv                   # Cluster 3 Subset (Constant)
+│   ├── cluster_4_train_data.csv                   # Cluster 4 Subset (Constant)
+│   ├── cluster_5_train_data.csv                   # Cluster 5 Subset (Active)
+│   └── cluster_6_train_data.csv                   # Cluster 6 Subset (Active - Edge Case)
+│
+├── 🤖 Models (Saved Model Artifacts)
+│   ├── team_preprocessing.joblib                  # StandardScaler + Feature Selector
+│   ├── team_cluster_model.joblib                  # K-Means Model (K=7)
+│   ├── member_model_cluster_0.joblib              # Stacking Classifier - Cluster 0
+│   └── member_model_cluster_1.joblib              # Stacking Classifier - Cluster 1
+│
+├── 📋 Requirements
+│   └── requirements.txt                           # Python Dependencies
 │
 ├── 📄 Documentation
-│   └── README.md                           # This file
+│   ├── README.md                                  # This File
+│   └── LICENSE                                    # MIT License
 │
-└── 📋 Requirements
-    └── requirements.txt                    # Python dependencies
+└── � Additional Model Files (Root)
+    ├── member_model_cluster_1.joblib              # Backup Model File
+    ├── member_model_cluster_5.joblib              # Cluster 5 Model
+    └── member_model_cluster_6.joblib              # Cluster 6 Model
 ```
 
 ---
@@ -270,7 +302,7 @@ jupyter>=1.0.0
 ### Step 1: Data Preparation & Clustering
 
 ```bash
-jupyter notebook 1_Team_TrainingData.ipynb
+jupyter notebook 05_TrainingData.ipynb
 ```
 
 **Tasks:**
@@ -312,7 +344,7 @@ jupyter notebook 2_Member_Cluster_6.ipynb
 ### Step 3: Test Set Generalization
 
 ```bash
-jupyter notebook 3_Team_Generalization.ipynb
+jupyter notebook 05_Generalization.ipynb
 ```
 
 **Tasks:**
